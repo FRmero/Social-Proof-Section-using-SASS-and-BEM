@@ -4,7 +4,7 @@
 @import 'globals';
 
 .info {
-    padding: $separation;
+    padding: $separation / 2;
 
     &__text {
         margin-bottom: $separation / 1;
@@ -94,65 +94,65 @@
 }
 
 .reviews {
-    padding: $separation;
+    padding: $separation / 2;
 
     &__card {
         background-color: $Very-Dark-Magenta;
         border-radius: 5px;
         margin-bottom: $separation / 5;
-        padding: $separation / 3;
-        color: $White;
-
+        padding: $separation / 2;
 
         .user {
             display: flex;
             gap: $separation / 2;
             align-items: center;
-            margin-bottom: $separation / 3;
 
             img {
                 border-radius: 50%;
             }
+        }
 
-            .username {
-                font-weight: bold;
-                text-transform: capitalize;
-            }
+        .username {
+            color: $White;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+    
+        .status {
+            color: $Dark-Grayish-Magenta;
+            text-transform: capitalize;
 
-            .status {
-                color: $Dark-Grayish-Magenta;
-                text-transform: capitalize;
-            }
+        }
 
-            .comment {
-                font-size: 2rem;
-            }
+        .comment {
+            color: $White;
         }
     }
 
     @include medium {
-        display: flex;
-        gap: $separation / 3;
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+    
+            .reviews__card {
+                width: 80%;
+                height: 90%;
+                max-height: 40rem;
 
-        &__card {
-            width: 80%;
-            margin-bottom: 0;
+                &:first-child {
+                    align-self: start;
+                }
 
-            &:first-child {
-                align-self: flex-start;
-            }
-            &:nth-child(2) {
-                align-self: center;
-            }
-            &:last-child {
-                align-self: flex-end;
+                &:nth-child(2) {
+                    align-self: center;
+                }
+                &:last-child {
+                    align-self: end;
+                }
             }
         }
     }
+    
 }
 
-.footer {
-    text-align: center;
-    padding: $separation;
-    margin: 0;
-}
+    

@@ -398,7 +398,7 @@ p {
 }
 
 .info {
-  padding: 5rem;
+  padding: 2.5rem;
 }
 
 .info__text {
@@ -511,15 +511,14 @@ p {
 }
 
 .reviews {
-  padding: 5rem;
+  padding: 2.5rem;
 }
 
 .reviews__card {
   background-color: #502050;
   border-radius: 5px;
   margin-bottom: 1rem;
-  padding: 1.66667rem;
-  color: white;
+  padding: 2.5rem;
 }
 
 .reviews__card .user {
@@ -530,56 +529,53 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.66667rem;
 }
 
 .reviews__card .user img {
   border-radius: 50%;
 }
 
-.reviews__card .user .username {
-  font-weight: bold;
+.reviews__card .username {
+  color: white;
   text-transform: capitalize;
+  font-weight: 700;
 }
 
-.reviews__card .user .status {
+.reviews__card .status {
   color: #937b92;
   text-transform: capitalize;
 }
 
-.reviews__card .user .comment {
-  font-size: 2rem;
+.reviews__card .comment {
+  color: white;
 }
 
 @media (min-width: 768px) {
-  .reviews {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 1.66667rem;
+  .reviews__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
-  .reviews__card {
+  .reviews__container .reviews__card {
     width: 80%;
-    margin-bottom: 0;
+    height: 90%;
+    max-height: 40rem;
   }
-  .reviews__card:first-child {
+  .reviews__container .reviews__card:first-child {
     -ms-flex-item-align: start;
-        align-self: flex-start;
+        -ms-grid-row-align: start;
+        align-self: start;
   }
-  .reviews__card:nth-child(2) {
+  .reviews__container .reviews__card:nth-child(2) {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
   }
-  .reviews__card:last-child {
+  .reviews__container .reviews__card:last-child {
     -ms-flex-item-align: end;
-        align-self: flex-end;
+        -ms-grid-row-align: end;
+        align-self: end;
   }
-}
-
-.footer {
-  text-align: center;
-  padding: 5rem;
-  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
